@@ -1,8 +1,9 @@
+## Real-time event streaming from Kafka to ClickHouse using Python.
+
 ### Stack Overview
 - Kafka (Broker + Zookeeper) → event streaming
 - ClickHouse → OLAP database for fast analytics
 - Python → generate events & consume from Kafka → insert into ClickHouse
-- PowerBI Desktop → connect to ClickHouse and visualize data
 - Docker & Docker Compose → run Kafka + ClickHouse locally
 - zookeeper → Kafka dependency for managing brokers
 
