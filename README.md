@@ -19,15 +19,7 @@ localhost:9000 - ClickHouse client program
 
 ### 3. create ClickHouse Table Schema:
 ```sql
-CREATE DATABASE IF NOT EXISTS analytics;
-
-CREATE TABLE analytics.events (
-    event_time DateTime,
-    user_id String,
-    event_type String,
-    value Float32
-) ENGINE = MergeTree()
-ORDER BY event_time;
+SHOW TABLES;
 ```
 
 ### 4. Create Python Virtual Environment & Install dependencies
@@ -61,3 +53,13 @@ FROM events
 GROUP BY event_type
 ORDER BY cnt DESC;
 ```
+
+### TODO
+- Decide on Source of info to connect to Kafka
+- Add API IOT device event simulation (https://openweathermap.org/api/one-call-3#current)
+
+### Clickhouse commands
+`SELECT currentDatabase();` - check current database
+`USE analytics;` - switch to analytics database
+`SHOW TABLES;` - show tables in current database
+`DESCRIBE TABLE events;` - show table schema
